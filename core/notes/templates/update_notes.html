@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block start %}
+
+<div class="container mt-5">
+
+    <form class="col-6 mx-auto card p-4 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2 style="color: rgb(48, 45, 45); font-size: 40px;">Update Summary</h2>
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Title</label>
+          <input name="title" value="{{summary.title}}" required type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Summary</label>
+          <!-- <textarea name="form-control"></textarea> -->
+          <input name="summary" value="{{summary.summary}}" required  type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Notes Image</label>
+            <input name="notes_image"  type="file" class="form-control">
+          </div>
+        <button type="submit" class="btn btn-success " >Update Notes</button>
+      </form>
+      
+
+
+
+
+</div>
+
+{%endblock%}
+
+
+
+
+
